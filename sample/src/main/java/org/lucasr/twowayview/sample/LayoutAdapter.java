@@ -116,6 +116,11 @@ public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.SimpleView
 
             final StaggeredGridLayoutManager.LayoutParams lp =
                     (StaggeredGridLayoutManager.LayoutParams) itemView.getLayoutParams();
+            lp.width = 450;
+//            if (itemId == 0) {
+//                lp.width = 100;
+//            }
+//            lp.height = 300;
 //            lp.width = 900;
 //            if (itemId > 0) {
 //                lp.width = 150;
@@ -123,7 +128,7 @@ public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.SimpleView
 
             if (!isVertical) {
                 lp.span = span;
-                lp.width = size;
+//                lp.width = size;
                 itemView.setLayoutParams(lp);
             } else {
                 lp.span = span;
