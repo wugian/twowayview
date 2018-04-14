@@ -924,16 +924,17 @@ public abstract class TwoWayLayoutManager extends LayoutManager {
     }
 
     public Orientation getOrientation() {
-        return (mIsVertical ? Orientation.VERTICAL : Orientation.HORIZONTAL);
+//        return (mIsVertical ? Orientation.VERTICAL : Orientation.HORIZONTAL);
+        return ( Orientation.HORIZONTAL);
     }
 
     public void setOrientation(Orientation orientation) {
-        final boolean isVertical = (orientation == Orientation.VERTICAL);
+        final boolean isVertical = false;//(orientation == Orientation.VERTICAL);
         if (this.mIsVertical == isVertical) {
             return;
         }
 
-        this.mIsVertical = isVertical;
+        this.mIsVertical = false;
         requestLayout();
     }
 

@@ -115,7 +115,8 @@ class Lanes {
     }
 
     public Orientation getOrientation() {
-        return (mIsVertical ? Orientation.VERTICAL : Orientation.HORIZONTAL);
+//        return (mIsVertical ? Orientation.VERTICAL : Orientation.HORIZONTAL);
+        return (Orientation.HORIZONTAL);
     }
 
     public void save() {

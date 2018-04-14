@@ -98,17 +98,28 @@ public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.SimpleView
                 dimenId = R.dimen.staggered_child_small;
             }
 
-            final int span;
+            int span;
             if (itemId == 2) {
                 span = 2;
             } else {
                 span = 1;
             }
 
-            final int size = mContext.getResources().getDimensionPixelSize(dimenId);
+            int size = mContext.getResources().getDimensionPixelSize(dimenId);
+            if (itemId == 0) {
+                size = 300;
+                span = 2;
+            } else {
+                size = 150;
+                span = 1;
+            }
 
             final StaggeredGridLayoutManager.LayoutParams lp =
                     (StaggeredGridLayoutManager.LayoutParams) itemView.getLayoutParams();
+//            lp.width = 900;
+//            if (itemId > 0) {
+//                lp.width = 150;
+//            }
 
             if (!isVertical) {
                 lp.span = span;
