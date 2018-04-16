@@ -17,6 +17,7 @@
 package org.lucasr.twowayview.sample;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,6 +75,18 @@ public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.SimpleView
     @Override
     public SimpleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final View view = LayoutInflater.from(mContext).inflate(R.layout.item, parent, false);
+        view.setFocusable(true);
+        view.setFocusableInTouchMode(true);
+        view.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    ((TextView) view.findViewById(R.id.title)).setTextColor(Color.RED);
+                } else {
+                    ((TextView) view.findViewById(R.id.title)).setTextColor(Color.BLACK);
+                }
+            }
+        });
         return new SimpleViewHolder(view);
     }
 
